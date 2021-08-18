@@ -1,4 +1,5 @@
 import random
+import os
       
 def palabra_aleatoria():
     with open("./archivos/data.txt","r", encoding="utf-8") as f:
@@ -18,31 +19,33 @@ def palabra_aleatoria():
     }
     cadena= cadena.translate(mapeo)
     return cadena
-   
+
 def comparar(palabra_random, letra, lineas):
-    palabra_guess= [lineas]
-    letra= letra.upper
-    palabra_random= []
-    while palabra_random != palabra_guess:
+    show =[lineas]
+    while palabra_random != show:
         for i in palabra_random():
-            if letra == i:
-                print 
+            if letra == palabra_random[i]:
+                show.replace(show[i], letra)
+                return show
+            else:
+                return "horrible"
 
-        
 
-        
 
 
 def run():
-    palabra= palabra_aleatoria()
+    palabra_random= palabra_aleatoria()
     print('!Bienvenido al juego del ahorcado!')
-    print('Adivina la palabra de '+ str(len(palabra)) + ' letras.')
-    lineas = print(len(palabra)*' _')
-    print(palabra)
-    letra=input('Introduce una letra: ')
-    comparar(palabra, letra, lineas)
+    print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
+    lineas = print(len(palabra_random)*' _')
+    print(palabra_random)
+    letra= input('Introduce una letra: ').upper
+    print (comparar(palabra_random, letra, lineas))
 
 
 
 if __name__ == '__main__':
     run()
+
+
+vreijbntrjnevwrjekmcrokemrijvmtrijvrij
