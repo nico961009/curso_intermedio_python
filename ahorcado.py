@@ -26,9 +26,9 @@ def comparar(palabra_random, letra, lineas):
         for i in palabra_random():
             if letra == palabra_random[i]:
                 show.replace(show[i], letra)
-                return show
+                print (show)
             else:
-                return "horrible"
+                print ("horrible")
 
 
 
@@ -37,15 +37,13 @@ def run():
     palabra_random= palabra_aleatoria()
     print('!Bienvenido al juego del ahorcado!')
     print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
-    lineas = print(len(palabra_random)*' _')
-    print(palabra_random)
+    lineas = str(len(palabra_random))
     letra= input('Introduce una letra: ').upper
+
+    print(palabra_random)
     print (comparar(palabra_random, letra, lineas))
 
 
 
 if __name__ == '__main__':
     run()
-
-
-vreijbntrjnevwrjekmcrokemrijvmtrijvrij
