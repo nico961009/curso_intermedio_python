@@ -20,30 +20,39 @@ def palabra_aleatoria():
     cadena= cadena.translate(mapeo)
     return cadena
 
-def comparar(palabra_random, letra, lineas):
-    show =[lineas]
-    while palabra_random != show:
-        for i in palabra_random():
-            if letra == palabra_random[i]:
-                show.replace(show[i], letra)
-                print (show)
+def comparar(palabra, cadena):
+    while palabra != cadena:
+        letra= (input('Introduce una letra: ')).upper()
+        cadena_t= " ".join(cadena)
+        os.system("clear")
+        for indice, valor in enumerate (palabra):
+            if valor == letra:
+                cadena[indice] = letra
+                cadena_t= " ".join(cadena)
+                os.system("clear")
+                print(cadena_t)
             else:
-                print ("horrible")
-
-
-
+                os.system("clear")
+                print(cadena_t)
+    os.system("clear")
+    print("La palabra es "+str("".join(palabra))+", así que GANASTE, muchas felicidades!")
 
 def run():
     palabra_random= palabra_aleatoria()
+    os.system("clear")
     print('!Bienvenido al juego del ahorcado!')
     print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
-    lineas = str(len(palabra_random))
-    letra= input('Introduce una letra: ').upper
+    lineas = list(len(palabra_random)*"_")
+    print(" ".join(lineas))
+    print(comparar(palabra_random, lineas))
 
-    print(palabra_random)
-    print (comparar(palabra_random, letra, lineas))
 
 
 
 if __name__ == '__main__':
     run()
+
+
+
+            
+
