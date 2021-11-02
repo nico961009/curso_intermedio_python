@@ -38,7 +38,7 @@ def comparar(palabra, cadena):
     print("La palabra es "+str("".join(palabra))+", así que GANASTE, muchas felicidades!")
 
 def run():
-    palabra_random= palabra_aleatoria()
+    palabra_random= list(palabra_aleatoria())
     os.system("clear")
     print('!Bienvenido al juego del ahorcado!')
     print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
