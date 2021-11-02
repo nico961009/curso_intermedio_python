@@ -22,7 +22,10 @@ def palabra_aleatoria():
 
 def comparar(palabra, cadena):
     while palabra != cadena:
+        print('Adivina la palabra de '+ str(len(palabra)) + ' letras.')
         letra= (input('Introduce una letra: ')).upper()
+        assert len(letra) == 1, "Solo se puede ingresar una letra, ni + ni -"
+        assert letra.isalpha(), "Solo se pueden ingresar letras"
         cadena_t= " ".join(cadena)
         os.system("clear")
         for indice, valor in enumerate (palabra):
@@ -41,13 +44,9 @@ def run():
     palabra_random= list(palabra_aleatoria())
     os.system("clear")
     print('!Bienvenido al juego del ahorcado!')
-    print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
     lineas = list(len(palabra_random)*"_")
     print(" ".join(lineas))
     print(comparar(palabra_random, lineas))
-
-
-
 
 if __name__ == '__main__':
     run()
