@@ -23,7 +23,8 @@ def run():
     print('!Bienvenido al juego del ahorcado!')
     print('Adivina la palabra de '+ str(len(palabra_random)) + ' letras.')
     lineas = list(len(palabra_random)*"_")
-    print (comparar(palabra_random, lineas))
+    print(" ".join(lineas))
+    print(comparar(palabra_random, lineas))
 
 if __name__ == '__main__':
     run()
